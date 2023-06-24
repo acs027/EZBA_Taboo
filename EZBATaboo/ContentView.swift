@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                NavigationLink {
+                    CategoriesView()
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.orange)
+                        Text("Categories")
+                    }
+                    .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
+                }
+                
+                Button {
+                    
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.orange)
+                        Text("Exit")
+                    }
+                    .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
+                }
+            }
         }
-        .padding()
     }
 }
 

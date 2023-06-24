@@ -7,18 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083F7FD52A26B3C9007067A9 /* CategoriesView.swift */; };
+		083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */; };
+		0873E8552A2803BA007E142C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873E8542A2803BA007E142C /* GameView.swift */; };
+		0873E8572A2803C6007E142C /* GameView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873E8562A2803C6007E142C /* GameView-ViewModel.swift */; };
+		0895F36D2A27539F002016E7 /* city_country.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3642A27539F002016E7 /* city_country.json */; };
+		0895F36E2A27539F002016E7 /* things.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3652A27539F002016E7 /* things.json */; };
+		0895F36F2A27539F002016E7 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3662A27539F002016E7 /* people.json */; };
+		0895F3702A27539F002016E7 /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3672A27539F002016E7 /* cars.json */; };
+		0895F3712A27539F002016E7 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3682A27539F002016E7 /* food.json */; };
+		0895F3722A27539F002016E7 /* sports.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3692A27539F002016E7 /* sports.json */; };
+		0895F3732A27539F002016E7 /* literature.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36A2A27539F002016E7 /* literature.json */; };
+		0895F3742A27539F002016E7 /* web.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36B2A27539F002016E7 /* web.json */; };
+		0895F3752A27539F002016E7 /* tv.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36C2A27539F002016E7 /* tv.json */; };
 		08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */; };
 		08C9A0672A24DF5A00575FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0662A24DF5A00575FC7 /* ContentView.swift */; };
 		08C9A0692A24DF5B00575FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0682A24DF5B00575FC7 /* Assets.xcassets */; };
 		08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A06B2A24DF5B00575FC7 /* Preview Assets.xcassets */; };
+		08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */; };
+		08C9A08A2A2631A400575FC7 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0892A2631A400575FC7 /* animals.json */; };
+		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083F7FD52A26B3C9007067A9 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesView-ViewModel.swift"; sourceTree = "<group>"; };
+		0873E8542A2803BA007E142C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		0873E8562A2803C6007E142C /* GameView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView-ViewModel.swift"; sourceTree = "<group>"; };
+		0895F3642A27539F002016E7 /* city_country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city_country.json; sourceTree = "<group>"; };
+		0895F3652A27539F002016E7 /* things.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = things.json; sourceTree = "<group>"; };
+		0895F3662A27539F002016E7 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		0895F3672A27539F002016E7 /* cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cars.json; sourceTree = "<group>"; };
+		0895F3682A27539F002016E7 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		0895F3692A27539F002016E7 /* sports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sports.json; sourceTree = "<group>"; };
+		0895F36A2A27539F002016E7 /* literature.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = literature.json; sourceTree = "<group>"; };
+		0895F36B2A27539F002016E7 /* web.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = web.json; sourceTree = "<group>"; };
+		0895F36C2A27539F002016E7 /* tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tv.json; sourceTree = "<group>"; };
 		08C9A0612A24DF5A00575FC7 /* EZBATaboo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZBATaboo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZBATabooApp.swift; sourceTree = "<group>"; };
 		08C9A0662A24DF5A00575FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08C9A0682A24DF5B00575FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C9A06B2A24DF5B00575FC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		08C9A0892A2631A400575FC7 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
+		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +85,13 @@
 			children = (
 				08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */,
 				08C9A0662A24DF5A00575FC7 /* ContentView.swift */,
+				08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */,
+				083F7FD52A26B3C9007067A9 /* CategoriesView.swift */,
+				083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */,
+				0873E8542A2803BA007E142C /* GameView.swift */,
+				0873E8562A2803C6007E142C /* GameView-ViewModel.swift */,
+				08C9A08B2A26320000575FC7 /* TabooWord.swift */,
+				08C9A0742A24E67500575FC7 /* Data */,
 				08C9A0682A24DF5B00575FC7 /* Assets.xcassets */,
 				08C9A06A2A24DF5B00575FC7 /* Preview Content */,
 			);
@@ -65,6 +104,23 @@
 				08C9A06B2A24DF5B00575FC7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		08C9A0742A24E67500575FC7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				08C9A0892A2631A400575FC7 /* animals.json */,
+				0895F3672A27539F002016E7 /* cars.json */,
+				0895F3642A27539F002016E7 /* city_country.json */,
+				0895F3682A27539F002016E7 /* food.json */,
+				0895F36A2A27539F002016E7 /* literature.json */,
+				0895F3662A27539F002016E7 /* people.json */,
+				0895F3692A27539F002016E7 /* sports.json */,
+				0895F3652A27539F002016E7 /* things.json */,
+				0895F36C2A27539F002016E7 /* tv.json */,
+				0895F36B2A27539F002016E7 /* web.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +181,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0895F36D2A27539F002016E7 /* city_country.json in Resources */,
 				08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */,
+				0895F3712A27539F002016E7 /* food.json in Resources */,
+				0895F36E2A27539F002016E7 /* things.json in Resources */,
+				0895F3702A27539F002016E7 /* cars.json in Resources */,
+				0895F3732A27539F002016E7 /* literature.json in Resources */,
+				0895F3722A27539F002016E7 /* sports.json in Resources */,
+				0895F36F2A27539F002016E7 /* people.json in Resources */,
+				08C9A08A2A2631A400575FC7 /* animals.json in Resources */,
+				0895F3742A27539F002016E7 /* web.json in Resources */,
+				0895F3752A27539F002016E7 /* tv.json in Resources */,
 				08C9A0692A24DF5B00575FC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C9A0672A24DF5A00575FC7 /* ContentView.swift in Sources */,
+				0873E8572A2803C6007E142C /* GameView-ViewModel.swift in Sources */,
+				08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */,
 				08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */,
+				083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */,
+				083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */,
+				08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */,
+				0873E8552A2803BA007E142C /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -272,8 +344,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,8 +372,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -18,9 +18,30 @@ extension GameView {
         @Published var incorrectTaboo = [TabooWord]()
         @Published var passedTaboo = [TabooWord]()
         
+        @Published var teamScore = 0
+        @Published var teamName : String = "SALP"
+        @Published var passCount = 0
+        
         func nextCard() {
             let card = gameTaboo.removeLast()
             passedTaboo.append(card)
+        }
+        
+        func passCard() {
+            if passCount < 3{
+                passCount += 1
+                let card = gameTaboo.removeLast()
+                passedTaboo.append(card)
+            }
+        }
+        
+        func correctAnswer() {
+            teamScore += 1
+            gameTaboo.removeLast()
+        }
+        
+        func wrongAnswer() {
+            gameTaboo.removeLast()
         }
         
         func loadGame() {

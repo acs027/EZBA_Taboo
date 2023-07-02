@@ -7,14 +7,22 @@
 
 import SwiftUI
 
+struct tabooWordRect: View {
+    let word: String
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(.blue)
+            Text(word)
+        }
+    }
+}
+
 struct GameView: View {
     @StateObject var viewModel = ViewModel()
     let categories: Set<String>
     
     var body: some View {
-        
-      
-        
         ZStack {
             
             Button {
@@ -29,33 +37,110 @@ struct GameView: View {
             }
             .opacity(viewModel.gameStarted ? 0 : 1)
             
-            ForEach(viewModel.gameTaboo, id:\.key) { word in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10).fill(.gray)
-                    VStack {
+            VStack {
+                
+                Spacer()
+                
+                VStack{
+                    Text(viewModel.teamName)
+                    
+                    Text("Score: \(String(viewModel.teamScore))")
+                }.opacity(viewModel.gameStarted ? 1 : 0)
+                .padding()
+                
+                ZStack{
+                    ForEach(viewModel.gameTaboo, id:\.key) { word in
                         ZStack {
-                            RoundedRectangle(cornerRadius: 10).fill(.purple)
-                            Text(word.key)
-                        }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10).fill(.purple)
-                            HStack {
+                            RoundedRectangle(cornerRadius: 10).fill(.gray)
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(lineWidth: 5)
+                                .fill(.black)
+                                .zIndex(1)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10).fill(.purple)
+        //                            Rectangle().fill(.black)
+                                    Text(word.key)
+                                        .font(.largeTitle)
+                                        .bold()
+                                    Rectangle().fill(.black).frame(height: 5)
+                                        .offset(y: UIScreen.screenHeight * 0.10)
+                                }.frame(height: UIScreen.screenHeight * 0.20)
+                                
+                                
+                                Spacer()
+                                
                                 ForEach(word.forbidden_words, id:\.self) { fbword in
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 10).fill(.blue)
+        //                                tabooWordRect(word: fbword)
+        //                                .padding(.horizontal)
                                         Text(fbword)
-                                            .minimumScaleFactor(0.4)
-                                    }
+                                        .font(.title)
+                                        .padding(1)
+        //                                    .minimumScaleFactor(0.4)
                                 }
+                                
+                                Spacer()
                             }
                         }
-                    }.padding()
+                        .opacity(viewModel.gameStarted ? 1 : 0)
+                        .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenHeight * 0.7)
+                    }
+                }
+                Spacer()
+                
+                HStack{
+                    Button {
+                        viewModel.wrongAnswer()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(.red)
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(lineWidth: 3)
+                                .fill(.black)
+                            Text("WRONG")
+                                .foregroundColor(.black)
+                        }
+                    }.frame(height: UIScreen.main.bounds.height * 0.075)
+                    
+                    Button {
+                        viewModel.passCard()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(.yellow)
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(lineWidth: 3)
+                                .fill(.black)
+                            VStack{
+                                Text("PASS")
+                                    .foregroundColor(.black)
+                                Text("\(String(viewModel.passCount))/3")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+                    .disabled(viewModel.passCount >= 3)
+                    .opacity(viewModel.passCount >= 3 ? 0.5 : 1)
+                    .frame(height: UIScreen.main.bounds.height * 0.075)
+                    
+                    Button {
+                        viewModel.correctAnswer()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(.green)
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(lineWidth: 3)
+                                .fill(.black)
+                            Text("CORRECT")
+                                .foregroundColor(.black)
+                        }
+                    }.frame(height: UIScreen.main.bounds.height * 0.075)
+                    
                 }
                 .opacity(viewModel.gameStarted ? 1 : 0)
-                .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.9)
-                .onTapGesture {
-                    viewModel.nextCard()
-                }
+                .padding([.bottom, .horizontal])
             }
         }
         .navigationBarBackButtonHidden(true)

@@ -35,7 +35,7 @@ struct ContentView: View {
                     .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

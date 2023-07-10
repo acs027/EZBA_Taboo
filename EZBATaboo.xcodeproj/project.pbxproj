@@ -27,6 +27,8 @@
 		08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */; };
 		08C9A08A2A2631A400575FC7 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0892A2631A400575FC7 /* animals.json */; };
 		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
+		28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C02A5B125C005F8E9A /* ScoreView.swift */; };
+		28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		08C9A0892A2631A400575FC7 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
 		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
+		28E7B8C02A5B125C005F8E9A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */,
 				0873E8542A2803BA007E142C /* GameView.swift */,
 				0873E8562A2803C6007E142C /* GameView-ViewModel.swift */,
+				28E7B8C02A5B125C005F8E9A /* ScoreView.swift */,
+				28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */,
 				08C9A08B2A26320000575FC7 /* TabooWord.swift */,
 				08C9A0742A24E67500575FC7 /* Data */,
 				08C9A0682A24DF5B00575FC7 /* Assets.xcassets */,
@@ -205,11 +211,13 @@
 			files = (
 				08C9A0672A24DF5A00575FC7 /* ContentView.swift in Sources */,
 				0873E8572A2803C6007E142C /* GameView-ViewModel.swift in Sources */,
+				28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */,
 				08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */,
 				08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */,
 				083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */,
 				083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */,
 				08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */,
+				28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */,
 				0873E8552A2803BA007E142C /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +352,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,7 +381,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

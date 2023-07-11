@@ -13,6 +13,8 @@ extension GameView {
         @Published var datas = ReadData()
         @Published var gameStarted = false
         @Published var gameEnded = false
+        @Published var gamePaused = false
+        
         @Published var timeLimit = 10
         @Published var currentTime = 10
         
@@ -22,11 +24,15 @@ extension GameView {
         @Published var passedTaboo = [TabooWord]()
         
         @Published var teamScore = 0
-        @Published var teamName : String = "SALP"
+        @Published var teamName : String
         @Published var passCount = 0
         
         @Published var questionLimit = 10
         @Published var answeredQuestions = 0
+        
+        init(teamName: String) {
+            self.teamName = teamName
+        }
         
         func passCard() {
             if passCount < 3 && !gameTaboo.isEmpty{
@@ -63,16 +69,23 @@ extension GameView {
         func startTimer() {
             currentTime = timeLimit
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: !gameEnded) { _ in
-                    if self.currentTime > 0 {
-                        self.currentTime -= 1
-                    } else {
-                        self.wrongAnswer()
-                    }
+                    self.updateTimer()
                 }
+        }
+        
+        func updateTimer() {
+            if !gamePaused {
+                if currentTime > 0 {
+                    currentTime -= 1
+                } else {
+                    wrongAnswer()
+                }
+            }
         }
         
         func resetTimer() {
             currentTime = timeLimit
+            gamePaused = false
         }
         
         func loadGame() {

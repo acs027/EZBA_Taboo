@@ -11,6 +11,8 @@ import SwiftUI
 extension CategoriesView {
     class ViewModel: ObservableObject {
         @Published var categorySet = Set<String>()
+        @Published var teamName = "Team Name"
+        @Published var timeLimit = 60
         
         func opacityCalculator(geometry: GeometryProxy) -> CGFloat {
             if geometry.frame(in: .global).midX < 100 {

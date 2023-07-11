@@ -41,11 +41,13 @@ struct CategoriesView: View {
                     }
                 }
             }
+            TextField("Team Name", text: $viewModel.teamName)
+            
             NavigationLink {
-                GameView(categories: viewModel.categorySet)
+                GameView(viewModel: .init(teamName: viewModel.teamName), categories: viewModel.categorySet)
             } label: {
                 Text("Play")
-            }
+            }.disabled(viewModel.categorySet.isEmpty)
         }
     }
 }

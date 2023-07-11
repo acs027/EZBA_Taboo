@@ -19,7 +19,7 @@ struct tabooWordRect: View {
 }
 
 struct GameView: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = ViewModel(teamName: "Team Name")
     let categories: Set<String>
     
     var body: some View {
@@ -50,6 +50,12 @@ struct GameView: View {
                         Text("Score: \(String(viewModel.teamScore))")
                         
                         Text(String(viewModel.currentTime))
+                        
+                        Button {
+                            viewModel.gamePaused.toggle()
+                        } label: {
+                            Text(viewModel.gamePaused ? "Resume" : "Pause")
+                        }
                     }.opacity(viewModel.gameStarted ? 1 : 0)
                     .padding()
                     

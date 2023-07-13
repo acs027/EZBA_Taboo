@@ -13,8 +13,8 @@ struct ScoreView: View {
         VStack{
             Spacer()
             
-            Text(viewModel.teamName)
-            Text("Final Score: \(String(viewModel.teamScore))")
+//            Text(viewModel.teamName)
+            Text("Final Score: \(String(viewModel.teamScore))").font(.largeTitle)
             
             Spacer()
             

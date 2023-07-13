@@ -15,8 +15,8 @@ extension GameView {
         @Published var gameEnded = false
         @Published var gamePaused = false
         
-        @Published var timeLimit = 10
-        @Published var currentTime = 10
+        @Published var timeLimit : Int = 10
+        @Published var currentTime : Int = 10
         
         @Published var gameTaboo = [TabooWord]()
         @Published var correctTaboo = [TabooWord]()
@@ -27,11 +27,14 @@ extension GameView {
         @Published var teamName : String
         @Published var passCount = 0
         
-        @Published var questionLimit = 10
+        @Published var questionLimit : Int = 10
         @Published var answeredQuestions = 0
         
-        init(teamName: String) {
+        init(teamName: String, timeLimit: Int, questionLimit: Int) {
             self.teamName = teamName
+            self.timeLimit = timeLimit
+            self.currentTime = timeLimit
+            self.questionLimit = questionLimit
         }
         
         func passCard() {
@@ -89,7 +92,7 @@ extension GameView {
         }
         
         func loadGame() {
-            for _ in 0...12 {
+            for _ in 0...(questionLimit + 2) {
                 let randomWord = datas.words.randomElement()
                 gameTaboo.append(randomWord!)
             }

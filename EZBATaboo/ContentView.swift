@@ -19,7 +19,7 @@ struct ContentView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.orange)
-                        Text("Categories")
+                        Text("Start Game")
                     }
                     .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
                 }

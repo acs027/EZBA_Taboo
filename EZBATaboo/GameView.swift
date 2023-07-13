@@ -19,7 +19,7 @@ struct tabooWordRect: View {
 }
 
 struct GameView: View {
-    @StateObject var viewModel = ViewModel(teamName: "Team Name")
+    @StateObject var viewModel = ViewModel(teamName: "Team Name", timeLimit: 60, questionLimit: 10)
     let categories: Set<String>
     
     var body: some View {
@@ -43,21 +43,30 @@ struct GameView: View {
                 VStack {
                     
                     Spacer()
-                    
-                    VStack{
-                        Text(viewModel.teamName)
-                        
-                        Text("Score: \(String(viewModel.teamScore))")
-                        
-                        Text(String(viewModel.currentTime))
-                        
-                        Button {
-                            viewModel.gamePaused.toggle()
-                        } label: {
-                            Text(viewModel.gamePaused ? "Resume" : "Pause")
-                        }
-                    }.opacity(viewModel.gameStarted ? 1 : 0)
-                    .padding()
+                        HStack{
+//                            Text(viewModel.teamName)
+                            
+                            Text("Score: \(String(viewModel.teamScore))")
+                            
+                            Spacer()
+                            
+                            Button {
+                                viewModel.gamePaused.toggle()
+                            } label: {
+                                Text(viewModel.gamePaused ? "Resume" : "Pause")
+                            }
+                            
+                            Spacer()
+                            
+                            ZStack{
+                                Circle().fill(viewModel.currentTime > 10 ? .green : .red).frame(width: 40)
+                                Circle().stroke(lineWidth: 2).frame(width: 40)
+                                Text(String(viewModel.currentTime))
+                            }.frame(width: 50, height: 50)
+                            
+                        }.frame(width: UIScreen.screenWidth * 0.85)
+                        .opacity(viewModel.gameStarted ? 1 : 0)
+                        .padding(.horizontal)
                     
                     ZStack{
                         ForEach(viewModel.gameTaboo, id:\.key) { word in

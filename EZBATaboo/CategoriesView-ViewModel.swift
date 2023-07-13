@@ -13,6 +13,7 @@ extension CategoriesView {
         @Published var categorySet = Set<String>()
         @Published var teamName = "Team Name"
         @Published var timeLimit = 60
+        @Published var questionLimit = 10
         
         func opacityCalculator(geometry: GeometryProxy) -> CGFloat {
             if geometry.frame(in: .global).midX < 100 {

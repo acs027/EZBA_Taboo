@@ -24,7 +24,7 @@ struct GameView: View {
     
     var body: some View {
         if viewModel.gameEnded {
-            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName))
+            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName, extraTime: viewModel.extraTime))
         } else {
             ZStack {
                 Button {
@@ -167,6 +167,7 @@ struct GameView: View {
             .ignoresSafeArea()
             .onAppear {
                 viewModel.loadData(categories: categories)
+                viewModel.prepareHaptics()
             }
         }
     }

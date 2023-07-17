@@ -12,10 +12,12 @@ extension ScoreView {
     @MainActor class ViewModel: ObservableObject {
         @Published var teamScore = 0
         @Published var teamName = "Default"
+        @Published var extraTime = 0
         
-        init(teamScore: Int, teamName: String) {
+        init(teamScore: Int, teamName: String, extraTime: Int) {
             self.teamScore = teamScore
             self.teamName = teamName
+            self.extraTime = extraTime
         }
     }
 }

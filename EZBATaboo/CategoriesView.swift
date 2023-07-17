@@ -18,7 +18,7 @@ struct CategoriesView: View {
     
     var body: some View {
         VStack {
-            Text("Select the Categories")
+            Text("Select one or more Categories")
             
             ZStack(alignment: .center) {
                 Color.white

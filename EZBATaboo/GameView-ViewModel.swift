@@ -20,7 +20,6 @@ extension GameView {
         
         @Published var timeLimit : Int = 10
         @Published var currentTime : Int = 10
-        @Published var extraTime : Int = 0
         
         @Published var gameTaboo = [TabooWord]()
         @Published var correctTaboo = [TabooWord]()
@@ -31,6 +30,7 @@ extension GameView {
         @Published var teamName : String
         @Published var passCount = 0
         
+        @Published var offset : CGFloat = 0
         @Published var questionLimit : Int = 10
         @Published var answeredQuestions = 0
         
@@ -43,7 +43,6 @@ extension GameView {
         
         func passCard() {
             if passCount < 3 && !gameTaboo.isEmpty{
-                resetTimer()
                 passCount += 1
                 let card = gameTaboo.removeLast()
                 passedTaboo.append(card)
@@ -52,8 +51,6 @@ extension GameView {
         
         func correctAnswer() {
             if !gameTaboo.isEmpty {
-                extraTime += currentTime
-                resetTimer()
                 gameTaboo.removeLast()
                 teamScore += 1
                 answeredQuestions += 1
@@ -94,10 +91,9 @@ extension GameView {
         
         func wrongAnswer() {
             if !gameTaboo.isEmpty {
-                extraTime += currentTime
-                resetTimer()
                 gameTaboo.removeLast()
                 answeredQuestions += 1
+                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {   }
                 if answeredQuestions == questionLimit {
                      gameEnded = true
                  }
@@ -120,7 +116,7 @@ extension GameView {
                     currentTime -= 1
                 } else {
                     wrongAnswer()
-                    AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {   }
+                    gameEnded = true
                 }
             }
         }
@@ -128,6 +124,17 @@ extension GameView {
         func resetTimer() {
             currentTime = timeLimit
             gamePaused = false
+        }
+        
+        func pauseGame() {
+            gamePaused.toggle()
+            withAnimation(.easeInOut(duration: 0.5)){
+                if gamePaused {
+                    offset = UIScreen.main.bounds.height * 0.1
+                } else {
+                    offset = 0
+                }
+            }
         }
         
         func loadGame() {

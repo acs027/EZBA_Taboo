@@ -19,20 +19,26 @@ struct ContentView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.orange)
-                        Text("Start Game")
+                        HStack{
+                            Text("Start Game")
+                            Image(systemName: "play.circle")
+                        }
                     }
-                    .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
+                    .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
                 }
                 
-                Button {
-                    
+                NavigationLink {
+                    CustomCardView()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.orange)
-                        Text("Exit")
-                    }
-                    .frame(width: UIScreen.screenWidth/3, height: UIScreen.screenHeight/3)
+                        HStack{
+                            Text("Create Custom Cards")
+                            Image(systemName: "menucard")
+                        }
+                                            }
+                    .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
                 }
             }
         }.navigationBarBackButtonHidden(true)

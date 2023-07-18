@@ -66,6 +66,7 @@ struct CategoriesView: View {
                         Text("30 seconds").tag(30)
                         Text("60 seconds").tag(60)
                         Text("120 seconds").tag(120)
+                        Text("240 seconds").tag(240)
                     }
                 ).pickerStyle(MenuPickerStyle())
             }

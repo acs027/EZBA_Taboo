@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ScoreView: View {
-    @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default", extraTime: 1)
+    @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default")
     var body: some View {
         VStack{
             Spacer()
             
 //            Text(viewModel.teamName)
             Text("Final Score: \(String(viewModel.teamScore))").font(.largeTitle)
-            Text("Extra Time: \(String(viewModel.extraTime)) seconds")
             
             Spacer()
             

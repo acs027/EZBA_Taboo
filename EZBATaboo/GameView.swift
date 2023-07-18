@@ -24,7 +24,7 @@ struct GameView: View {
     
     var body: some View {
         if viewModel.gameEnded {
-            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName, extraTime: viewModel.extraTime))
+            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName))
         } else {
             ZStack {
                 Button {
@@ -51,7 +51,7 @@ struct GameView: View {
                             Spacer()
                             
                             Button {
-                                viewModel.gamePaused.toggle()
+                                viewModel.pauseGame()
                             } label: {
                                 Text(viewModel.gamePaused ? "Resume" : "Pause")
                             }
@@ -161,6 +161,7 @@ struct GameView: View {
                     }
                     .opacity(viewModel.gameStarted ? 1 : 0)
                     .padding([.bottom, .horizontal])
+                    .offset(y: viewModel.offset)
                 }
             }
             .navigationBarBackButtonHidden(true)

@@ -7,16 +7,19 @@
 
 import Foundation
 import SwiftUI
+import CoreHaptics
+import AudioToolbox
 
 extension GameView {
     @MainActor class ViewModel: ObservableObject {
         @Published var datas = ReadData()
+        @Published var engine: CHHapticEngine?
         @Published var gameStarted = false
         @Published var gameEnded = false
         @Published var gamePaused = false
         
-        @Published var timeLimit = 10
-        @Published var currentTime = 10
+        @Published var timeLimit : Int = 10
+        @Published var currentTime : Int = 10
         
         @Published var gameTaboo = [TabooWord]()
         @Published var correctTaboo = [TabooWord]()
@@ -27,17 +30,21 @@ extension GameView {
         @Published var teamName : String
         @Published var passCount = 0
         
-        @Published var questionLimit = 10
+        @Published var offset : CGFloat = 0
+        @Published var questionLimit : Int = 10
         @Published var answeredQuestions = 0
         
-        init(teamName: String) {
+        init(teamName: String, timeLimit: Int, questionLimit: Int) {
             self.teamName = teamName
+            self.timeLimit = timeLimit
+            self.currentTime = timeLimit
+            self.questionLimit = questionLimit
         }
         
         func passCard() {
             if passCount < 3 && !gameTaboo.isEmpty{
-                resetTimer()
                 passCount += 1
+                hapticFeedback(time: 1)
                 let card = gameTaboo.removeLast()
                 passedTaboo.append(card)
             }
@@ -45,7 +52,6 @@ extension GameView {
         
         func correctAnswer() {
             if !gameTaboo.isEmpty {
-                resetTimer()
                 gameTaboo.removeLast()
                 teamScore += 1
                 answeredQuestions += 1
@@ -54,12 +60,41 @@ extension GameView {
                  }
             }
         }
+            
+        func prepareHaptics() {
+            guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+            
+            do {
+                engine = try CHHapticEngine()
+                try engine?.start()
+            } catch {
+                print("There was an error creatinghg the engine: \(error.localizedDescription)")
+            }
+        }
+        
+        func hapticFeedback(time: Float){
+            guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+            
+            var events = [CHHapticEvent]()
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.8)
+            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+            events.append(event)
+            
+            do {
+                let pattern = try CHHapticPattern(events: events, parameters: [])
+                let player = try engine?.makePlayer(with: pattern)
+                try player?.start(atTime: 0)
+            } catch {
+                print("Failed to play pattern \(error.localizedDescription)")
+            }
+        }
         
         func wrongAnswer() {
             if !gameTaboo.isEmpty {
-                resetTimer()
                 gameTaboo.removeLast()
                 answeredQuestions += 1
+                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {   }
                 if answeredQuestions == questionLimit {
                      gameEnded = true
                  }
@@ -76,9 +111,13 @@ extension GameView {
         func updateTimer() {
             if !gamePaused {
                 if currentTime > 0 {
+                    if currentTime < 11 {
+                        hapticFeedback(time: Float(currentTime))
+                    }
                     currentTime -= 1
                 } else {
                     wrongAnswer()
+                    gameEnded = true
                 }
             }
         }
@@ -88,8 +127,19 @@ extension GameView {
             gamePaused = false
         }
         
+        func pauseGame() {
+            gamePaused.toggle()
+            withAnimation(.easeInOut(duration: 0.5)){
+                if gamePaused {
+                    offset = UIScreen.main.bounds.height * 0.1
+                } else {
+                    offset = 0
+                }
+            }
+        }
+        
         func loadGame() {
-            for _ in 0...12 {
+            for _ in 0...(questionLimit + 2) {
                 let randomWord = datas.words.randomElement()
                 gameTaboo.append(randomWord!)
             }

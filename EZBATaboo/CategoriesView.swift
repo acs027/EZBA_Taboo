@@ -10,44 +10,77 @@ import SwiftUI
 
 struct CategoriesView: View {
     @StateObject var viewModel = ViewModel()
+    @State var numberofQs = [10,15,20]
+    
+    let layout = [
+        GridItem(.adaptive(minimum: 100))
+    ]
     
     var body: some View {
         VStack {
+            Text("Select one or more Categories")
+            
             ZStack(alignment: .center) {
-                Color.black
+                Color.white
                     .ignoresSafeArea()
                 
-                ScrollView(.horizontal) {
-                    HStack {
+                ScrollView {
+                    LazyVGrid(columns: layout) {
                         ForEach(Categories.allCases, id:\.self) { category in
-                            ZStack {
-                                GeometryReader { geometry in
-                                    Group {
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .fill(viewModel.categoryCheck(category.rawValue) ? .green : .gray)
-                                        
-                                        Text("\(category.rawValue)")
-                                            .font(.largeTitle)
-                                    }
-                                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                                    .opacity(viewModel.opacityCalculator(geometry: geometry))
+                            if viewModel.customCheck(category.rawValue) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(viewModel.categoryCheck(category.rawValue) ? .green : .orange)
+                                    
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(lineWidth: 3)
+                                    
+                                    Text("\(category.rawValue)")
+                                        .font(.title3)
+                                        .foregroundColor(.black)
                                 }
-                            }
-                            .frame(width: 200, height: 200)
-                            .onTapGesture {
-                                viewModel.categoryTapped(category.rawValue)
+                                .frame(width: 100, height: 75)
+                                .onTapGesture {
+                                    viewModel.categoryTapped(category.rawValue)
+                                }
                             }
                         }
                     }
-                }
+                }.padding(.horizontal)
             }
-            TextField("Team Name", text: $viewModel.teamName)
+            
+//            TextField("Team Name", text: $viewModel.teamName)
             
             NavigationLink {
-                GameView(viewModel: .init(teamName: viewModel.teamName), categories: viewModel.categorySet)
+                GameView(viewModel: .init(teamName: viewModel.teamName, timeLimit: viewModel.timeLimit, questionLimit: viewModel.questionLimit), categories: viewModel.categorySet)
             } label: {
                 Text("Play")
-            }.disabled(viewModel.categorySet.isEmpty)
+            }.disabled(viewModel.buttonDisabled())
+            
+            HStack{
+                Text("Time Limit:")
+                Picker(
+                    selection: $viewModel.timeLimit,
+                    label: HStack{
+                        Text("Time Limit:")
+                    },
+                    content:{
+                        Text("30 seconds").tag(30)
+                        Text("60 seconds").tag(60)
+                        Text("120 seconds").tag(120)
+                        Text("240 seconds").tag(240)
+                    }
+                ).pickerStyle(MenuPickerStyle())
+            }
+            
+//            HStack{
+//                Text("Number of Questions:")
+//                Picker("Number of Questions: ", selection: $viewModel.questionLimit){
+//                    ForEach(numberofQs, id: \.self) {
+//                        Text("\($0)")
+//                    }
+//                }
+//            }
         }
     }
 }

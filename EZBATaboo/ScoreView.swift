@@ -9,16 +9,22 @@ import SwiftUI
 
 struct ScoreView: View {
     @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default")
+    
     var body: some View {
         VStack{
             Spacer()
             
-            Text(viewModel.teamName)
-            Text("Final Score: \(String(viewModel.teamScore))")
+//            Text(viewModel.teamName)
+            Text("Final Score: \(String(viewModel.teamScore))").font(.largeTitle)
             
             Spacer()
             
             HStack{
+//                Button {
+//                    viewModel.callAd()
+//                } label: {
+//                    Text("Deneme")
+//                }
                 NavigationLink(destination: CategoriesView()) {
                     Text("Play Again")
                 }
@@ -30,6 +36,9 @@ struct ScoreView: View {
                 .padding(.horizontal)
             }
         }.navigationBarBackButtonHidden(true)
+            .onDisappear(){
+                viewModel.callAd()
+            }
     }
 }
 

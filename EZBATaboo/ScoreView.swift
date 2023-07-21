@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScoreView: View {
     @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default")
+    
     var body: some View {
         VStack{
             Spacer()
@@ -19,6 +20,11 @@ struct ScoreView: View {
             Spacer()
             
             HStack{
+                Button {
+                    viewModel.callAd()
+                } label: {
+                    Text("Deneme")
+                }
                 NavigationLink(destination: CategoriesView()) {
                     Text("Play Again")
                 }

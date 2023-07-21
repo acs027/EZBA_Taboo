@@ -47,6 +47,8 @@ struct CustomCardView: View {
                 }.frame(width: UIScreen.screenWidth * 0.85, height: UIScreen.screenHeight * 0.65)
                 
                 Button {
+                    let customWord = [TabooWord(key: viewModel.cardName, forbidden_words: viewModel.forbiddenWords)]
+                    viewModel.WriteData(customWord, "custom.json")
                     viewModel.resetCard()
                 } label: {
                     Text("Add")

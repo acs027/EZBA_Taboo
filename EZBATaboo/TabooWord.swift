@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TabooWord: Identifiable, Decodable {
+struct TabooWord: Identifiable, Decodable, Encodable {
     let id = UUID()
     let key: String
     let forbidden_words: [String]

@@ -39,7 +39,7 @@ extension CategoriesView {
         
     }
     enum Categories: String, CaseIterable, Equatable {
-        case animals, cars, city_country, food, literature, people, sports, things, tv, web
+        case animals, cars, city_country, food, literature, people, sports, things, tv, web, custom
     }
 }
 

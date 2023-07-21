@@ -29,8 +29,11 @@
 		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
 		281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93262A66F1C3007664C0 /* CustomCardView.swift */; };
 		281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */; };
+		289C10582A6A0B2400E1754C /* custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 289C10572A6A0B2400E1754C /* custom.json */; };
 		28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C02A5B125C005F8E9A /* ScoreView.swift */; };
 		28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */; };
+		28EAADB42A696B7300DC3BF7 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */; };
+		A604AB30006D9A1BFFAB7727 /* Pods_EZBATaboo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C2ABE50492C305F884BDA4 /* Pods_EZBATaboo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +60,14 @@
 		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
 		281F93262A66F1C3007664C0 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCardView-ViewModel.swift"; sourceTree = "<group>"; };
+		289C10572A6A0B2400E1754C /* custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom.json; sourceTree = "<group>"; };
 		28E7B8C02A5B125C005F8E9A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreView-ViewModel.swift"; sourceTree = "<group>"; };
+		28E9C0732A687EFE009DD489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
+		38C2ABE50492C305F884BDA4 /* Pods_EZBATaboo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EZBATaboo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6905835540E3EB3F81523125 /* Pods-EZBATaboo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZBATaboo.debug.xcconfig"; path = "Target Support Files/Pods-EZBATaboo/Pods-EZBATaboo.debug.xcconfig"; sourceTree = "<group>"; };
+		7A8450FB9E9F2836846C798F /* Pods-EZBATaboo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZBATaboo.release.xcconfig"; path = "Target Support Files/Pods-EZBATaboo/Pods-EZBATaboo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A604AB30006D9A1BFFAB7727 /* Pods_EZBATaboo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +87,8 @@
 			children = (
 				08C9A0632A24DF5A00575FC7 /* EZBATaboo */,
 				08C9A0622A24DF5A00575FC7 /* Products */,
+				69B0E046F991F9EB18CDA267 /* Pods */,
+				7823ED79AD2E4F31DAB4B570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,7 +103,9 @@
 		08C9A0632A24DF5A00575FC7 /* EZBATaboo */ = {
 			isa = PBXGroup;
 			children = (
+				28E9C0732A687EFE009DD489 /* Info.plist */,
 				08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */,
+				28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */,
 				08C9A0662A24DF5A00575FC7 /* ContentView.swift */,
 				08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */,
 				281F93262A66F1C3007664C0 /* CustomCardView.swift */,
@@ -124,6 +138,7 @@
 				08C9A0892A2631A400575FC7 /* animals.json */,
 				0895F3672A27539F002016E7 /* cars.json */,
 				0895F3642A27539F002016E7 /* city_country.json */,
+				289C10572A6A0B2400E1754C /* custom.json */,
 				0895F3682A27539F002016E7 /* food.json */,
 				0895F36A2A27539F002016E7 /* literature.json */,
 				0895F3662A27539F002016E7 /* people.json */,
@@ -135,6 +150,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		69B0E046F991F9EB18CDA267 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6905835540E3EB3F81523125 /* Pods-EZBATaboo.debug.xcconfig */,
+				7A8450FB9E9F2836846C798F /* Pods-EZBATaboo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7823ED79AD2E4F31DAB4B570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38C2ABE50492C305F884BDA4 /* Pods_EZBATaboo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08C9A06F2A24DF5B00575FC7 /* Build configuration list for PBXNativeTarget "EZBATaboo" */;
 			buildPhases = (
+				BF47D9EEBF0137B5DE8FD95A /* [CP] Check Pods Manifest.lock */,
 				08C9A05D2A24DF5A00575FC7 /* Sources */,
 				08C9A05E2A24DF5A00575FC7 /* Frameworks */,
 				08C9A05F2A24DF5A00575FC7 /* Resources */,
+				A0E99A00823F7E7BA92E7067 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289C10582A6A0B2400E1754C /* custom.json in Resources */,
 				0895F36D2A27539F002016E7 /* city_country.json in Resources */,
 				08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */,
 				0895F3712A27539F002016E7 /* food.json in Resources */,
@@ -210,6 +245,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A0E99A00823F7E7BA92E7067 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EZBATaboo/Pods-EZBATaboo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EZBATaboo/Pods-EZBATaboo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EZBATaboo/Pods-EZBATaboo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF47D9EEBF0137B5DE8FD95A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EZBATaboo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		08C9A05D2A24DF5A00575FC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +295,7 @@
 				08C9A0672A24DF5A00575FC7 /* ContentView.swift in Sources */,
 				0873E8572A2803C6007E142C /* GameView-ViewModel.swift in Sources */,
 				28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */,
+				28EAADB42A696B7300DC3BF7 /* InterstitialView.swift in Sources */,
 				08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */,
 				08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */,
 				083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */,
@@ -349,6 +427,7 @@
 		};
 		08C9A0702A24DF5B00575FC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6905835540E3EB3F81523125 /* Pods-EZBATaboo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,6 +437,7 @@
 				DEVELOPMENT_TEAM = 3462F82DTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EZBATaboo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,6 +459,7 @@
 		};
 		08C9A0712A24DF5B00575FC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A8450FB9E9F2836846C798F /* Pods-EZBATaboo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +469,7 @@
 				DEVELOPMENT_TEAM = 3462F82DTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EZBATaboo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -27,20 +27,22 @@ struct CategoriesView: View {
                 ScrollView {
                     LazyVGrid(columns: layout) {
                         ForEach(Categories.allCases, id:\.self) { category in
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(viewModel.categoryCheck(category.rawValue) ? .green : .orange)
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(lineWidth: 3)
-                                
-                                Text("\(category.rawValue)")
-                                    .font(.title3)
-                                    .foregroundColor(.black)
-                            }
-                            .frame(width: 100, height: 75)
-                            .onTapGesture {
-                                viewModel.categoryTapped(category.rawValue)
+                            if viewModel.customCheck(category.rawValue) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(viewModel.categoryCheck(category.rawValue) ? .green : .orange)
+                                    
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(lineWidth: 3)
+                                    
+                                    Text("\(category.rawValue)")
+                                        .font(.title3)
+                                        .foregroundColor(.black)
+                                }
+                                .frame(width: 100, height: 75)
+                                .onTapGesture {
+                                    viewModel.categoryTapped(category.rawValue)
+                                }
                             }
                         }
                     }
@@ -53,7 +55,7 @@ struct CategoriesView: View {
                 GameView(viewModel: .init(teamName: viewModel.teamName, timeLimit: viewModel.timeLimit, questionLimit: viewModel.questionLimit), categories: viewModel.categorySet)
             } label: {
                 Text("Play")
-            }.disabled(viewModel.categorySet.isEmpty)
+            }.disabled(viewModel.buttonDisabled())
             
             HStack{
                 Text("Time Limit:")

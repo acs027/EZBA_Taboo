@@ -18,8 +18,11 @@ extension CustomCardView {
             let jsonData = try? jsonEncoder.encode(data)
 
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let fileURL = documentsDirectory.appendingPathComponent(fileName)
-
+            guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: "json")
+                else {
+                print("Not found")
+                return
+            }
             do {
                 try jsonData!.write(to: fileURL)
                 print("Data saved to \(fileName)")

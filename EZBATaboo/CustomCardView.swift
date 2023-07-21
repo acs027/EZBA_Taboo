@@ -48,7 +48,7 @@ struct CustomCardView: View {
                 
                 Button {
                     let customWord = [TabooWord(key: viewModel.cardName, forbidden_words: viewModel.forbiddenWords)]
-                    viewModel.WriteData(customWord, "custom.json")
+                    viewModel.WriteData(customWord, "custom")
                     viewModel.resetCard()
                 } label: {
                     Text("Add")

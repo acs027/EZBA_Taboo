@@ -42,6 +42,7 @@ struct ContentView: View {
                 }
             }
         }.navigationBarBackButtonHidden(true)
+            .preferredColorScheme(.light)
     }
 }
 

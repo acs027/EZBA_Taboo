@@ -20,11 +20,11 @@ struct ScoreView: View {
             Spacer()
             
             HStack{
-                Button {
-                    viewModel.callAd()
-                } label: {
-                    Text("Deneme")
-                }
+//                Button {
+//                    viewModel.callAd()
+//                } label: {
+//                    Text("Deneme")
+//                }
                 NavigationLink(destination: CategoriesView()) {
                     Text("Play Again")
                 }
@@ -36,6 +36,9 @@ struct ScoreView: View {
                 .padding(.horizontal)
             }
         }.navigationBarBackButtonHidden(true)
+            .onDisappear(){
+                viewModel.callAd()
+            }
     }
 }
 

@@ -44,6 +44,7 @@ extension GameView {
         func passCard() {
             if passCount < 3 && !gameTaboo.isEmpty{
                 passCount += 1
+                hapticFeedback(time: 1)
                 let card = gameTaboo.removeLast()
                 passedTaboo.append(card)
             }

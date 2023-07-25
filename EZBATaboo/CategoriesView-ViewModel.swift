@@ -45,10 +45,14 @@ extension CategoriesView {
         }
         
         func isJSONFileEmpty(_ fileName: String) -> Bool {
-            let fileURL = Bundle.main.url(forResource: fileName, withExtension: "json")
+            guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                print("Error getting documents directory URL.")
+                return true
+            }
+            let fileURL = documentsDirectoryURL.appendingPathComponent(fileName).appendingPathExtension("json")
             do {
                 // Read the contents of the file into Data
-                let jsonData = try Data(contentsOf: fileURL!)
+                let jsonData = try Data(contentsOf: fileURL)
                 
                 // Parse the JSON data into a Swift data structure
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
@@ -80,7 +84,7 @@ extension CategoriesView {
         
     }
     enum Categories: String, CaseIterable, Equatable {
-        case custom, animals, cars, city_country, food, literature, people, sports, things, tv, web
+        case animals, cars, city_country, food, literature, people, sports, things, tv, web
     }
 }
 

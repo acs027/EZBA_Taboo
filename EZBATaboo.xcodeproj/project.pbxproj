@@ -29,7 +29,7 @@
 		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
 		281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93262A66F1C3007664C0 /* CustomCardView.swift */; };
 		281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */; };
-		289C10582A6A0B2400E1754C /* custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 289C10572A6A0B2400E1754C /* custom.json */; };
+		289061392A708925006CA1BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289061382A708925006CA1BA /* ListView.swift */; };
 		28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C02A5B125C005F8E9A /* ScoreView.swift */; };
 		28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */; };
 		28EAADB42A696B7300DC3BF7 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */; };
@@ -60,7 +60,7 @@
 		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
 		281F93262A66F1C3007664C0 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCardView-ViewModel.swift"; sourceTree = "<group>"; };
-		289C10572A6A0B2400E1754C /* custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom.json; sourceTree = "<group>"; };
+		289061382A708925006CA1BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		28E7B8C02A5B125C005F8E9A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreView-ViewModel.swift"; sourceTree = "<group>"; };
 		28E9C0732A687EFE009DD489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +108,7 @@
 				28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */,
 				08C9A0662A24DF5A00575FC7 /* ContentView.swift */,
 				08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */,
+				289061382A708925006CA1BA /* ListView.swift */,
 				281F93262A66F1C3007664C0 /* CustomCardView.swift */,
 				281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */,
 				083F7FD52A26B3C9007067A9 /* CategoriesView.swift */,
@@ -138,7 +139,6 @@
 				08C9A0892A2631A400575FC7 /* animals.json */,
 				0895F3672A27539F002016E7 /* cars.json */,
 				0895F3642A27539F002016E7 /* city_country.json */,
-				289C10572A6A0B2400E1754C /* custom.json */,
 				0895F3682A27539F002016E7 /* food.json */,
 				0895F36A2A27539F002016E7 /* literature.json */,
 				0895F3662A27539F002016E7 /* people.json */,
@@ -227,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				289C10582A6A0B2400E1754C /* custom.json in Resources */,
 				0895F36D2A27539F002016E7 /* city_country.json in Resources */,
 				08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */,
 				0895F3712A27539F002016E7 /* food.json in Resources */,
@@ -302,6 +301,7 @@
 				281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */,
 				083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */,
 				08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */,
+				289061392A708925006CA1BA /* ListView.swift in Sources */,
 				28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */,
 				281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */,
 				0873E8552A2803BA007E142C /* GameView.swift in Sources */,
@@ -453,7 +453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -485,7 +485,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

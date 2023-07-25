@@ -55,6 +55,7 @@ extension GameView {
                 gameTaboo.removeLast()
                 teamScore += 1
                 answeredQuestions += 1
+                hapticFeedback(time: 1)
                 if answeredQuestions == questionLimit {
                      gameEnded = true
                  }
@@ -109,12 +110,13 @@ extension GameView {
         }
         
         func updateTimer() {
-            if !gamePaused {
+            if !gamePaused && !gameEnded && checkAppState(){
                 if currentTime > 0 {
                     if currentTime < 11 {
                         hapticFeedback(time: Float(currentTime))
                     }
                     currentTime -= 1
+                    print(currentTime)
                 } else {
                     wrongAnswer()
                     gameEnded = true
@@ -148,7 +150,27 @@ extension GameView {
         func loadData(categories: Set<String>) {
             objectWillChange.send()
             for category in categories {
-                datas.loadData(category)
+                if category == "custom" {
+                    datas.loadCustom()
+                    print("custom dahil")
+                } else {
+                    datas.loadData(category)
+                }
+            }
+        }
+        
+        func checkAppState() -> Bool {
+            let appState = UIApplication.shared.applicationState
+
+            switch appState {
+            case .active:
+                return true
+            case .inactive:
+                return false
+            case .background:
+                return false
+            @unknown default:
+                return false
             }
         }
     }

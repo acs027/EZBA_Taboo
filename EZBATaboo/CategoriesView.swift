@@ -26,8 +26,25 @@ struct CategoriesView: View {
                 
                 ScrollView {
                     LazyVGrid(columns: layout) {
+                        if viewModel.customCheck("custom") {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(viewModel.categoryCheck("custom") ? .green : .orange)
+                                
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(lineWidth: 3)
+                                
+                                Text("Custom")
+                                    .font(.title3)
+                                    .foregroundColor(.black)
+                            }
+                            .frame(width: 100, height: 75)
+                            .onTapGesture {
+                                viewModel.categoryTapped("custom")
+                            }
+                        }
+                        
                         ForEach(Categories.allCases, id:\.self) { category in
-                            if viewModel.customCheck(category.rawValue) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(viewModel.categoryCheck(category.rawValue) ? .green : .orange)
@@ -43,7 +60,6 @@ struct CategoriesView: View {
                                 .onTapGesture {
                                     viewModel.categoryTapped(category.rawValue)
                                 }
-                            }
                         }
                     }
                 }.padding(.horizontal)

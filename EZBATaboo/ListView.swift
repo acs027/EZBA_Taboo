@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct ListView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var customWords = ReadData()
     init() {
         customWords.loadCustom()
     }
     var body: some View {
-        List {
-            ForEach(customWords.words, id: \.id) { word in
-                Text(word.key)
-            }
-            .onDelete(perform: delete)
+        NavigationView{
+            ZStack{
+                List {
+                    ForEach(customWords.words, id: \.id) { word in
+                        Text(word.key)
+                    }
+                    .onDelete(perform: delete)
+                }
+                if customWords.words.isEmpty {
+                    Text("No custom cards added.").font(.title3)
+                }
+            }.toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button{
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                    }
+                }
+            })
         }
     }
     

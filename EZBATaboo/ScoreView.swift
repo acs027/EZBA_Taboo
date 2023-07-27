@@ -11,41 +11,61 @@ struct ScoreView: View {
     @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default")
     
     var body: some View {
-        VStack{
-            Spacer()
-            
-//            Text(viewModel.teamName)
-            Text("Final Score: \(String(viewModel.teamScore))").font(.largeTitle)
-            
-            Spacer()
-            
-            HStack{
-//                Button {
-//                    viewModel.callAd()
-//                } label: {
-//                    Text("Deneme")
-//                }
-                NavigationLink(destination: CategoriesView()) {
-                    Text("Play Again")
-                }
-                .padding(.horizontal)
+        ZStack {
+            Color(red: 108/255, green: 136/255, blue: 159/255)
+                .ignoresSafeArea()
+            VStack{
+                Spacer()
                 
-                NavigationLink(destination: ContentView()) {
-                    Text("Main Menu")
-                }
-                .padding(.horizontal)
-            }
-            .offset(y: viewModel.adReady ? 0 : 150)
-            .padding()
-        }
-        .onAppear(perform: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                        viewModel.adReady = true
+                Text("Final Score: \(String(viewModel.teamScore))").font(.largeTitle)
+                
+                Spacer()
+                
+                HStack{
+                    NavigationLink(destination: CategoriesView()) {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color(red: 203/255, green: 129/255, blue: 98/255))
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(lineWidth: 3)
+                                .fill(.black)
+                            HStack{
+                                Text("Play Again")
+                            }
+                            .font(.title3)
+                            .bold()
+                            .foregroundColor(.black)
+                        }.frame(height: UIScreen.main.bounds.height * 0.075)
                     }
-                })
-        .navigationBarBackButtonHidden(true)
-        .onDisappear(){
-            viewModel.callAd()
+                    .padding(.horizontal)
+                    
+                    NavigationLink(destination: ContentView()) {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color(red: 203/255, green: 129/255, blue: 98/255))
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(lineWidth: 3)
+                                .fill(.black)
+                            Text("Main Menu")
+                                .font(.title3)
+                                .bold()
+                                .foregroundColor(.black)
+                        }.frame(height: UIScreen.main.bounds.height * 0.075)
+                    }
+                    .padding(.horizontal)
+                }
+                .offset(y: viewModel.adReady ? 0 : 150)
+                .padding()
+            }
+            .onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            viewModel.adReady = true
+                        }
+                    })
+            .navigationBarBackButtonHidden(true)
+            .onDisappear(){
+                viewModel.callAd()
+        }
         }
     }
 }

@@ -27,6 +27,9 @@ struct GameView: View {
             ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName))
         } else {
             ZStack {
+                Color(red: 108/255, green: 136/255, blue: 159/255)
+                    .ignoresSafeArea()
+                
                 Button {
                     viewModel.gameStarted = true
                     viewModel.loadGame()
@@ -34,7 +37,8 @@ struct GameView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                        Text("Start")
+                        Text("Ready!")
+                            .font(.title)
                             .foregroundColor(.white)
                     }
                 }
@@ -53,7 +57,17 @@ struct GameView: View {
                             Button {
                                 viewModel.pauseGame()
                             } label: {
-                                Text(viewModel.gamePaused ? "Resume" : "Pause")
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(red: 251/255, green: 129/255, blue: 28/255))
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(lineWidth: 2)
+                                        .fill(.black)
+                                    HStack{
+                                        Text(viewModel.gamePaused ? "Resume" : "Pause")
+                                        Image(systemName: viewModel.gamePaused ? "play.fill" : "pause")
+                                    }
+                                }.frame(width: UIScreen.screenWidth * 0.25, height: UIScreen.screenHeight * 0.045)
                             }
                             
                             Spacer()
@@ -79,26 +93,27 @@ struct GameView: View {
                                 VStack {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 10).fill(.purple)
-            //                            Rectangle().fill(.black)
-                                        Text(word.key)
-                                            .font(.largeTitle)
-                                            .bold()
+                                        if !viewModel.gamePaused{
+                                            Text(word.key)
+                                                .font(.largeTitle)
+                                                .bold()
+                                                .padding(.horizontal)
+                                                .multilineTextAlignment(.center)
+                                        }
                                         Rectangle().fill(.black).frame(height: 5)
                                             .offset(y: UIScreen.screenHeight * 0.10)
                                     }.frame(height: UIScreen.screenHeight * 0.20)
                                     
                                     
                                     Spacer()
-                                    
-                                    ForEach(word.forbidden_words, id:\.self) { fbword in
-            //                                tabooWordRect(word: fbword)
-            //                                .padding(.horizontal)
-                                            Text(fbword)
-                                            .font(.title)
-                                            .padding(1)
-            //                                    .minimumScaleFactor(0.4)
+                                    if !viewModel.gamePaused{
+                                        ForEach(word.forbidden_words, id:\.self) { fbword in
+                                                Text(fbword)
+                                                .font(.title)
+                                                .padding(1)
+                                                .multilineTextAlignment(.center)
+                                        }
                                     }
-                                    
                                     Spacer()
                                 }
                             }
@@ -111,6 +126,7 @@ struct GameView: View {
                     HStack{
                         Button {
                             viewModel.wrongAnswer()
+                            viewModel.teamScore -= 1
                         } label: {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 25)

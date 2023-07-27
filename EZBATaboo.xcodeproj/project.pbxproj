@@ -27,6 +27,7 @@
 		08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */; };
 		08C9A08A2A2631A400575FC7 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0892A2631A400575FC7 /* animals.json */; };
 		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
+		280DE69A2A7183640077BF9C /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DE6992A7183640077BF9C /* SuccessView.swift */; };
 		281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93262A66F1C3007664C0 /* CustomCardView.swift */; };
 		281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */; };
 		289061392A708925006CA1BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289061382A708925006CA1BA /* ListView.swift */; };
@@ -58,6 +59,7 @@
 		08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		08C9A0892A2631A400575FC7 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
 		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
+		280DE6992A7183640077BF9C /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		281F93262A66F1C3007664C0 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCardView-ViewModel.swift"; sourceTree = "<group>"; };
 		289061382A708925006CA1BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -108,9 +110,10 @@
 				28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */,
 				08C9A0662A24DF5A00575FC7 /* ContentView.swift */,
 				08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */,
-				289061382A708925006CA1BA /* ListView.swift */,
 				281F93262A66F1C3007664C0 /* CustomCardView.swift */,
 				281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */,
+				280DE6992A7183640077BF9C /* SuccessView.swift */,
+				289061382A708925006CA1BA /* ListView.swift */,
 				083F7FD52A26B3C9007067A9 /* CategoriesView.swift */,
 				083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */,
 				0873E8542A2803BA007E142C /* GameView.swift */,
@@ -298,6 +301,7 @@
 				08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */,
 				08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */,
 				083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */,
+				280DE69A2A7183640077BF9C /* SuccessView.swift in Sources */,
 				281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */,
 				083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */,
 				08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */,

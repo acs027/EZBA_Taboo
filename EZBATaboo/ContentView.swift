@@ -12,37 +12,49 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                NavigationLink {
-                    CategoriesView()
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.orange)
-                        HStack{
-                            Text("Start Game")
-                            Image(systemName: "play.circle")
+            ZStack {
+                Color(red: 108/255, green: 136/255, blue: 159/255)
+                    .ignoresSafeArea()
+                VStack {
+                    NavigationLink {
+                        CategoriesView()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(red: 251/255, green: 129/255, blue: 28/255))
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(lineWidth: 3)
+                                .foregroundColor(.black)
+                            HStack{
+                                Text("Start Game").font(.title)
+                                Image(systemName: "play.circle").font(.title)
+                            }.foregroundColor(.black)
                         }
+                        .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
                     }
-                    .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
-                }
-                
-                NavigationLink {
-                    CustomCardView()
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.orange)
-                        HStack{
-                            Text("Create Custom Cards")
-                            Image(systemName: "menucard")
-                        }
-                                            }
-                    .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
+                    
+                    NavigationLink {
+                        CustomCardView()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(red: 251/255, green: 129/255, blue: 28/255))
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(lineWidth: 3)
+                                .foregroundColor(.black)
+                            HStack{
+                                Text("Create Custom Cards").font(.title2)
+                                Image(systemName: "menucard").font(.title)
+                            }.foregroundColor(.black)
+                                                }
+                        .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
+                    }
                 }
             }
-        }.navigationBarBackButtonHidden(true)
-            .preferredColorScheme(.light)
+        }
+        .navigationBarBackButtonHidden(true)
+        .preferredColorScheme(.light)
+        .tint(.black)
     }
 }
 

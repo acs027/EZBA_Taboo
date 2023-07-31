@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreView: View {
-    @StateObject var viewModel = ViewModel(teamScore: 5, teamName: "Default")
+    @StateObject var viewModel = ViewModel(teamScore: 5)
     
     var body: some View {
         ZStack {
@@ -54,18 +54,9 @@ struct ScoreView: View {
                     }
                     .padding(.horizontal)
                 }
-                .offset(y: viewModel.adReady ? 0 : 150)
                 .padding()
             }
-            .onAppear(perform: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                            viewModel.adReady = true
-                        }
-                    })
             .navigationBarBackButtonHidden(true)
-            .onDisappear(){
-                viewModel.callAd()
-        }
         }
     }
 }

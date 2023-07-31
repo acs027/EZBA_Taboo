@@ -52,7 +52,8 @@ struct CategoriesView: View {
                                         RoundedRectangle(cornerRadius: 10)
                                             .stroke(lineWidth: 3)
                                         
-                                        Text("\(category.rawValue.capitalized)")
+                                        Text(viewModel.categoryTitle(category.rawValue))
+                                            .multilineTextAlignment(.center)
                                             .font(.title3)
                                             .foregroundColor(.black)
                                     }
@@ -64,7 +65,7 @@ struct CategoriesView: View {
                         }.padding(.top)
                 }
                 NavigationLink {
-                    GameView(viewModel: .init(teamName: viewModel.teamName, timeLimit: viewModel.timeLimit, questionLimit: viewModel.questionLimit), categories: viewModel.categorySet)
+                    GameView(viewModel: .init(timeLimit: viewModel.timeLimit, questionLimit: viewModel.questionLimit), categories: viewModel.categorySet)
                 } label: {
                     ZStack{
                         if !viewModel.buttonDisabled(){

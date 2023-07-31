@@ -11,9 +11,8 @@ import SwiftUI
 extension CategoriesView {
     class ViewModel: ObservableObject {
         @Published var categorySet = Set<String>()
-        @Published var teamName = "Team Name"
         @Published var timeLimit = 60
-        @Published var questionLimit = 10
+        @Published var questionLimit = 35
         
         func opacityCalculator(geometry: GeometryProxy) -> CGFloat {
             if geometry.frame(in: .global).midX < 100 {
@@ -82,9 +81,13 @@ extension CategoriesView {
             return true
         }
         
+        func categoryTitle(_ category: String) -> String {
+            return category.replacingOccurrences(of: "_", with: " ")
+        }
+        
     }
     enum Categories: String, CaseIterable, Equatable {
-        case animals, cars, city_country, food, literature, people, sports, things, tv, web
+        case Animals, Artists, Books, Cars, Cities, Countries, Culture, Food, Geek, Jobs, Music, Mythology, Objects, People, Science, Sports, TV_Genres, World_History
     }
 }
 

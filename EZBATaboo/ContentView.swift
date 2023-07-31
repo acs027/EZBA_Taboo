@@ -16,6 +16,15 @@ struct ContentView: View {
                 Color(red: 108/255, green: 136/255, blue: 159/255)
                     .ignoresSafeArea()
                 VStack {
+                    Spacer()
+                    
+                    Image("wordsmithlogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.screenWidth * 0.95)
+                    
+                    Spacer()
+                    
                     NavigationLink {
                         CategoriesView()
                     } label: {
@@ -49,6 +58,7 @@ struct ContentView: View {
                                                 }
                         .frame(width: UIScreen.screenWidth/1.65, height: UIScreen.screenHeight/10)
                     }
+                    Spacer()
                 }
             }
         }

@@ -10,30 +10,34 @@ import SwiftUI
 import UIKit
 
 final class Interstitial:NSObject, GADFullScreenContentDelegate {
-  var interstitial:GADInterstitialAd?
-
-  override init() {
-    super.init()
-    self.loadInterstitial()
-  }
-
+    var interstitial:GADInterstitialAd?
+    
+    override init() {
+        super.init()
+        self.loadInterstitial()
+    }
+    
     func loadInterstitial(){
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        GADInterstitialAd.load(withAdUnitID:"xxx",
                                request: request,
-                               completionHandler: { [self] ad, error in
-                                if let error = error {
-                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                    return
-                                }
-                                interstitial = ad
-                                interstitial?.fullScreenContentDelegate = self
-                               })
+                               completionHandler: { [weak self] ad, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        })
     }
-
+    
     func showAd(){
         if self.interstitial != nil {
-            let root = UIApplication.shared.windows.first?.rootViewController
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+            let root = window?.rootViewController
             self.interstitial?.present(fromRootViewController: root!)
         }
         else{

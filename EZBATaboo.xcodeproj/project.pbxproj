@@ -11,58 +11,97 @@
 		083F7FD82A26B3D6007067A9 /* CategoriesView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */; };
 		0873E8552A2803BA007E142C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873E8542A2803BA007E142C /* GameView.swift */; };
 		0873E8572A2803C6007E142C /* GameView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873E8562A2803C6007E142C /* GameView-ViewModel.swift */; };
-		0895F36D2A27539F002016E7 /* city_country.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3642A27539F002016E7 /* city_country.json */; };
-		0895F36E2A27539F002016E7 /* things.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3652A27539F002016E7 /* things.json */; };
-		0895F36F2A27539F002016E7 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3662A27539F002016E7 /* people.json */; };
-		0895F3702A27539F002016E7 /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3672A27539F002016E7 /* cars.json */; };
-		0895F3712A27539F002016E7 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3682A27539F002016E7 /* food.json */; };
-		0895F3722A27539F002016E7 /* sports.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F3692A27539F002016E7 /* sports.json */; };
-		0895F3732A27539F002016E7 /* literature.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36A2A27539F002016E7 /* literature.json */; };
-		0895F3742A27539F002016E7 /* web.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36B2A27539F002016E7 /* web.json */; };
-		0895F3752A27539F002016E7 /* tv.json in Resources */ = {isa = PBXBuildFile; fileRef = 0895F36C2A27539F002016E7 /* tv.json */; };
 		08C9A0652A24DF5A00575FC7 /* EZBATabooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */; };
 		08C9A0672A24DF5A00575FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0662A24DF5A00575FC7 /* ContentView.swift */; };
 		08C9A0692A24DF5B00575FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0682A24DF5B00575FC7 /* Assets.xcassets */; };
 		08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A06B2A24DF5B00575FC7 /* Preview Assets.xcassets */; };
 		08C9A0732A24E51700575FC7 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */; };
-		08C9A08A2A2631A400575FC7 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 08C9A0892A2631A400575FC7 /* animals.json */; };
 		08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9A08B2A26320000575FC7 /* TabooWord.swift */; };
 		280DE69A2A7183640077BF9C /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DE6992A7183640077BF9C /* SuccessView.swift */; };
 		281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93262A66F1C3007664C0 /* CustomCardView.swift */; };
 		281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */; };
 		289061392A708925006CA1BA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289061382A708925006CA1BA /* ListView.swift */; };
+		28CF08892A74023100EF7EF6 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08772A74023000EF7EF6 /* Countries.json */; };
+		28CF088A2A74023100EF7EF6 /* Geek.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08782A74023000EF7EF6 /* Geek.json */; };
+		28CF088B2A74023100EF7EF6 /* Jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08792A74023000EF7EF6 /* Jobs.json */; };
+		28CF088C2A74023100EF7EF6 /* Cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087A2A74023000EF7EF6 /* Cars.json */; };
+		28CF088D2A74023100EF7EF6 /* Food.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087B2A74023000EF7EF6 /* Food.json */; };
+		28CF088E2A74023100EF7EF6 /* Animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087C2A74023000EF7EF6 /* Animals.json */; };
+		28CF088F2A74023100EF7EF6 /* Science.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087D2A74023000EF7EF6 /* Science.json */; };
+		28CF08902A74023100EF7EF6 /* World_History.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087E2A74023000EF7EF6 /* World_History.json */; };
+		28CF08912A74023100EF7EF6 /* Mythology.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF087F2A74023000EF7EF6 /* Mythology.json */; };
+		28CF08922A74023100EF7EF6 /* Objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08802A74023000EF7EF6 /* Objects.json */; };
+		28CF08932A74023100EF7EF6 /* People.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08812A74023000EF7EF6 /* People.json */; };
+		28CF08942A74023100EF7EF6 /* Artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08822A74023000EF7EF6 /* Artists.json */; };
+		28CF08952A74023100EF7EF6 /* Music.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08832A74023000EF7EF6 /* Music.json */; };
+		28CF08962A74023100EF7EF6 /* Sports.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08842A74023000EF7EF6 /* Sports.json */; };
+		28CF08972A74023100EF7EF6 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08852A74023000EF7EF6 /* Cities.json */; };
+		28CF08982A74023100EF7EF6 /* Books.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08862A74023000EF7EF6 /* Books.json */; };
+		28CF08992A74023100EF7EF6 /* TV_Genres.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08872A74023100EF7EF6 /* TV_Genres.json */; };
+		28CF089A2A74023100EF7EF6 /* Culture.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CF08882A74023100EF7EF6 /* Culture.json */; };
+		28D2AA1F2A76E24300895815 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2AA1E2A76E24300895815 /* LaunchScreenView.swift */; };
+		28D2AA212A7706EF00895815 /* countdownsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D2AA202A7706EF00895815 /* countdownsound.mp3 */; };
+		28D5B09B2A756B3200F3CC28 /* timeoutsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D5B0982A756B3200F3CC28 /* timeoutsound.mp3 */; };
+		28D5B09D2A756B3200F3CC28 /* startsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28D5B09A2A756B3200F3CC28 /* startsound.mp3 */; };
+		28D5B09F2A756BAB00F3CC28 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D5B09E2A756BAB00F3CC28 /* SoundPlayer.swift */; };
+		28D72A752A747C1F00684CDA /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D72A742A747C1F00684CDA /* ProgressBar.swift */; };
 		28E7B8C12A5B125C005F8E9A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C02A5B125C005F8E9A /* ScoreView.swift */; };
 		28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */; };
 		28EAADB42A696B7300DC3BF7 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */; };
 		A604AB30006D9A1BFFAB7727 /* Pods_EZBATaboo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C2ABE50492C305F884BDA4 /* Pods_EZBATaboo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		28D2AA2C2A77183000895815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C9A0592A24DF5A00575FC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08C9A0602A24DF5A00575FC7;
+			remoteInfo = EZBATaboo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		083F7FD52A26B3C9007067A9 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesView-ViewModel.swift"; sourceTree = "<group>"; };
 		0873E8542A2803BA007E142C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		0873E8562A2803C6007E142C /* GameView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView-ViewModel.swift"; sourceTree = "<group>"; };
-		0895F3642A27539F002016E7 /* city_country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city_country.json; sourceTree = "<group>"; };
-		0895F3652A27539F002016E7 /* things.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = things.json; sourceTree = "<group>"; };
-		0895F3662A27539F002016E7 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
-		0895F3672A27539F002016E7 /* cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cars.json; sourceTree = "<group>"; };
-		0895F3682A27539F002016E7 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
-		0895F3692A27539F002016E7 /* sports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sports.json; sourceTree = "<group>"; };
-		0895F36A2A27539F002016E7 /* literature.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = literature.json; sourceTree = "<group>"; };
-		0895F36B2A27539F002016E7 /* web.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = web.json; sourceTree = "<group>"; };
-		0895F36C2A27539F002016E7 /* tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tv.json; sourceTree = "<group>"; };
 		08C9A0612A24DF5A00575FC7 /* EZBATaboo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZBATaboo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZBATabooApp.swift; sourceTree = "<group>"; };
 		08C9A0662A24DF5A00575FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08C9A0682A24DF5B00575FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C9A06B2A24DF5B00575FC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
-		08C9A0892A2631A400575FC7 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
 		08C9A08B2A26320000575FC7 /* TabooWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooWord.swift; sourceTree = "<group>"; };
 		280DE6992A7183640077BF9C /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		281F93262A66F1C3007664C0 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		281F93282A66F1D8007664C0 /* CustomCardView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCardView-ViewModel.swift"; sourceTree = "<group>"; };
 		289061382A708925006CA1BA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		28CF08772A74023000EF7EF6 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		28CF08782A74023000EF7EF6 /* Geek.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Geek.json; sourceTree = "<group>"; };
+		28CF08792A74023000EF7EF6 /* Jobs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Jobs.json; sourceTree = "<group>"; };
+		28CF087A2A74023000EF7EF6 /* Cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Cars.json; path = ../../../../../taboowords/Cars.json; sourceTree = "<group>"; };
+		28CF087B2A74023000EF7EF6 /* Food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Food.json; path = ../../../../../taboowords/Food.json; sourceTree = "<group>"; };
+		28CF087C2A74023000EF7EF6 /* Animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Animals.json; path = ../../../../../taboowords/Animals.json; sourceTree = "<group>"; };
+		28CF087D2A74023000EF7EF6 /* Science.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Science.json; sourceTree = "<group>"; };
+		28CF087E2A74023000EF7EF6 /* World_History.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = World_History.json; sourceTree = "<group>"; };
+		28CF087F2A74023000EF7EF6 /* Mythology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mythology.json; sourceTree = "<group>"; };
+		28CF08802A74023000EF7EF6 /* Objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Objects.json; sourceTree = "<group>"; };
+		28CF08812A74023000EF7EF6 /* People.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = People.json; path = ../../../../../taboowords/People.json; sourceTree = "<group>"; };
+		28CF08822A74023000EF7EF6 /* Artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Artists.json; sourceTree = "<group>"; };
+		28CF08832A74023000EF7EF6 /* Music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Music.json; sourceTree = "<group>"; };
+		28CF08842A74023000EF7EF6 /* Sports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Sports.json; path = ../../../../../taboowords/Sports.json; sourceTree = "<group>"; };
+		28CF08852A74023000EF7EF6 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		28CF08862A74023000EF7EF6 /* Books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Books.json; sourceTree = "<group>"; };
+		28CF08872A74023100EF7EF6 /* TV_Genres.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TV_Genres.json; sourceTree = "<group>"; };
+		28CF08882A74023100EF7EF6 /* Culture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Culture.json; sourceTree = "<group>"; };
+		28D2AA1E2A76E24300895815 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		28D2AA202A7706EF00895815 /* countdownsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownsound.mp3; sourceTree = "<group>"; };
+		28D2AA262A77183000895815 /* EZBATabooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZBATabooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D5B0982A756B3200F3CC28 /* timeoutsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timeoutsound.mp3; sourceTree = "<group>"; };
+		28D5B09A2A756B3200F3CC28 /* startsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startsound.mp3; sourceTree = "<group>"; };
+		28D5B09E2A756BAB00F3CC28 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		28D72A742A747C1F00684CDA /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		28E7B8C02A5B125C005F8E9A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreView-ViewModel.swift"; sourceTree = "<group>"; };
 		28E9C0732A687EFE009DD489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +117,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A604AB30006D9A1BFFAB7727 /* Pods_EZBATaboo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D2AA232A77183000895815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				08C9A0612A24DF5A00575FC7 /* EZBATaboo.app */,
+				28D2AA262A77183000895815 /* EZBATabooUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +154,7 @@
 			children = (
 				28E9C0732A687EFE009DD489 /* Info.plist */,
 				08C9A0642A24DF5A00575FC7 /* EZBATabooApp.swift */,
+				28D2AA1E2A76E24300895815 /* LaunchScreenView.swift */,
 				28EAADB32A696B7300DC3BF7 /* InterstitialView.swift */,
 				08C9A0662A24DF5A00575FC7 /* ContentView.swift */,
 				08C9A0722A24E51700575FC7 /* ContentView-ViewModel.swift */,
@@ -118,9 +166,12 @@
 				083F7FD72A26B3D6007067A9 /* CategoriesView-ViewModel.swift */,
 				0873E8542A2803BA007E142C /* GameView.swift */,
 				0873E8562A2803C6007E142C /* GameView-ViewModel.swift */,
+				28D72A742A747C1F00684CDA /* ProgressBar.swift */,
 				28E7B8C02A5B125C005F8E9A /* ScoreView.swift */,
 				28E7B8C22A5B1277005F8E9A /* ScoreView-ViewModel.swift */,
+				28D5B09E2A756BAB00F3CC28 /* SoundPlayer.swift */,
 				08C9A08B2A26320000575FC7 /* TabooWord.swift */,
+				28D5B0972A756B1100F3CC28 /* Sound */,
 				08C9A0742A24E67500575FC7 /* Data */,
 				08C9A0682A24DF5B00575FC7 /* Assets.xcassets */,
 				08C9A06A2A24DF5B00575FC7 /* Preview Content */,
@@ -139,18 +190,37 @@
 		08C9A0742A24E67500575FC7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				08C9A0892A2631A400575FC7 /* animals.json */,
-				0895F3672A27539F002016E7 /* cars.json */,
-				0895F3642A27539F002016E7 /* city_country.json */,
-				0895F3682A27539F002016E7 /* food.json */,
-				0895F36A2A27539F002016E7 /* literature.json */,
-				0895F3662A27539F002016E7 /* people.json */,
-				0895F3692A27539F002016E7 /* sports.json */,
-				0895F3652A27539F002016E7 /* things.json */,
-				0895F36C2A27539F002016E7 /* tv.json */,
-				0895F36B2A27539F002016E7 /* web.json */,
+				28CF087C2A74023000EF7EF6 /* Animals.json */,
+				28CF08822A74023000EF7EF6 /* Artists.json */,
+				28CF08862A74023000EF7EF6 /* Books.json */,
+				28CF087A2A74023000EF7EF6 /* Cars.json */,
+				28CF08852A74023000EF7EF6 /* Cities.json */,
+				28CF08772A74023000EF7EF6 /* Countries.json */,
+				28CF08882A74023100EF7EF6 /* Culture.json */,
+				28CF087B2A74023000EF7EF6 /* Food.json */,
+				28CF08782A74023000EF7EF6 /* Geek.json */,
+				28CF08792A74023000EF7EF6 /* Jobs.json */,
+				28CF08832A74023000EF7EF6 /* Music.json */,
+				28CF087F2A74023000EF7EF6 /* Mythology.json */,
+				28CF08802A74023000EF7EF6 /* Objects.json */,
+				28CF08812A74023000EF7EF6 /* People.json */,
+				28CF087D2A74023000EF7EF6 /* Science.json */,
+				28CF08842A74023000EF7EF6 /* Sports.json */,
+				28CF08872A74023100EF7EF6 /* TV_Genres.json */,
+				28CF087E2A74023000EF7EF6 /* World_History.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		28D5B0972A756B1100F3CC28 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				28D2AA202A7706EF00895815 /* countdownsound.mp3 */,
+				28D5B09A2A756B3200F3CC28 /* startsound.mp3 */,
+				28D5B0982A756B3200F3CC28 /* timeoutsound.mp3 */,
+			);
+			name = Sound;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		69B0E046F991F9EB18CDA267 /* Pods */ = {
@@ -192,6 +262,24 @@
 			productReference = 08C9A0612A24DF5A00575FC7 /* EZBATaboo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		28D2AA252A77183000895815 /* EZBATabooUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D2AA2E2A77183000895815 /* Build configuration list for PBXNativeTarget "EZBATabooUITests" */;
+			buildPhases = (
+				28D2AA222A77183000895815 /* Sources */,
+				28D2AA232A77183000895815 /* Frameworks */,
+				28D2AA242A77183000895815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D2AA2D2A77183000895815 /* PBXTargetDependency */,
+			);
+			name = EZBATabooUITests;
+			productName = EZBATabooUITests;
+			productReference = 28D2AA262A77183000895815 /* EZBATabooUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,11 +287,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					08C9A0602A24DF5A00575FC7 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					28D2AA252A77183000895815 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 08C9A0602A24DF5A00575FC7;
 					};
 				};
 			};
@@ -221,6 +313,7 @@
 			projectRoot = "";
 			targets = (
 				08C9A0602A24DF5A00575FC7 /* EZBATaboo */,
+				28D2AA252A77183000895815 /* EZBATabooUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,18 +323,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0895F36D2A27539F002016E7 /* city_country.json in Resources */,
+				28CF08962A74023100EF7EF6 /* Sports.json in Resources */,
+				28CF088B2A74023100EF7EF6 /* Jobs.json in Resources */,
+				28D5B09D2A756B3200F3CC28 /* startsound.mp3 in Resources */,
 				08C9A06C2A24DF5B00575FC7 /* Preview Assets.xcassets in Resources */,
-				0895F3712A27539F002016E7 /* food.json in Resources */,
-				0895F36E2A27539F002016E7 /* things.json in Resources */,
-				0895F3702A27539F002016E7 /* cars.json in Resources */,
-				0895F3732A27539F002016E7 /* literature.json in Resources */,
-				0895F3722A27539F002016E7 /* sports.json in Resources */,
-				0895F36F2A27539F002016E7 /* people.json in Resources */,
-				08C9A08A2A2631A400575FC7 /* animals.json in Resources */,
-				0895F3742A27539F002016E7 /* web.json in Resources */,
-				0895F3752A27539F002016E7 /* tv.json in Resources */,
+				28CF089A2A74023100EF7EF6 /* Culture.json in Resources */,
+				28CF08912A74023100EF7EF6 /* Mythology.json in Resources */,
+				28CF08902A74023100EF7EF6 /* World_History.json in Resources */,
+				28CF08932A74023100EF7EF6 /* People.json in Resources */,
+				28D2AA212A7706EF00895815 /* countdownsound.mp3 in Resources */,
+				28CF088F2A74023100EF7EF6 /* Science.json in Resources */,
+				28CF088E2A74023100EF7EF6 /* Animals.json in Resources */,
+				28CF08892A74023100EF7EF6 /* Countries.json in Resources */,
+				28CF08982A74023100EF7EF6 /* Books.json in Resources */,
+				28D5B09B2A756B3200F3CC28 /* timeoutsound.mp3 in Resources */,
+				28CF088C2A74023100EF7EF6 /* Cars.json in Resources */,
+				28CF088A2A74023100EF7EF6 /* Geek.json in Resources */,
+				28CF08922A74023100EF7EF6 /* Objects.json in Resources */,
+				28CF088D2A74023100EF7EF6 /* Food.json in Resources */,
+				28CF08952A74023100EF7EF6 /* Music.json in Resources */,
+				28CF08972A74023100EF7EF6 /* Cities.json in Resources */,
+				28CF08992A74023100EF7EF6 /* TV_Genres.json in Resources */,
+				28CF08942A74023100EF7EF6 /* Artists.json in Resources */,
 				08C9A0692A24DF5B00575FC7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D2AA242A77183000895815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +416,32 @@
 				281F93272A66F1C3007664C0 /* CustomCardView.swift in Sources */,
 				083F7FD62A26B3C9007067A9 /* CategoriesView.swift in Sources */,
 				08C9A08C2A26320000575FC7 /* TabooWord.swift in Sources */,
+				28D72A752A747C1F00684CDA /* ProgressBar.swift in Sources */,
 				289061392A708925006CA1BA /* ListView.swift in Sources */,
 				28E7B8C32A5B1277005F8E9A /* ScoreView-ViewModel.swift in Sources */,
 				281F93292A66F1D8007664C0 /* CustomCardView-ViewModel.swift in Sources */,
+				28D5B09F2A756BAB00F3CC28 /* SoundPlayer.swift in Sources */,
 				0873E8552A2803BA007E142C /* GameView.swift in Sources */,
+				28D2AA1F2A76E24300895815 /* LaunchScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D2AA222A77183000895815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28D2AA2D2A77183000895815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08C9A0602A24DF5A00575FC7 /* EZBATaboo */;
+			targetProxy = 28D2AA2C2A77183000895815 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		08C9A06D2A24DF5B00575FC7 /* Debug */ = {
@@ -435,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EZBATaboo/Preview Content\"";
@@ -442,10 +572,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EZBATaboo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Wordsmith;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UILaunchStoryboardName = l;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +588,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = acs.EZBATaboo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -467,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EZBATaboo/Preview Content\"";
@@ -474,10 +611,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EZBATaboo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Wordsmith;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UILaunchStoryboardName = l;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,9 +627,48 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = acs.EZBATaboo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		28D2AA2F2A77183000895815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3462F82DTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Eken.EZBATabooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EZBATaboo;
+			};
+			name = Debug;
+		};
+		28D2AA302A77183000895815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3462F82DTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Eken.EZBATabooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EZBATaboo;
 			};
 			name = Release;
 		};
@@ -510,6 +689,15 @@
 			buildConfigurations = (
 				08C9A0702A24DF5B00575FC7 /* Debug */,
 				08C9A0712A24DF5B00575FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D2AA2E2A77183000895815 /* Build configuration list for PBXNativeTarget "EZBATabooUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D2AA2F2A77183000895815 /* Debug */,
+				28D2AA302A77183000895815 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

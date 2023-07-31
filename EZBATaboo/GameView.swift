@@ -19,27 +19,33 @@ struct tabooWordRect: View {
 }
 
 struct GameView: View {
-    @StateObject var viewModel = ViewModel(teamName: "Team Name", timeLimit: 60, questionLimit: 10)
+    @StateObject var viewModel = ViewModel(timeLimit: 60, questionLimit: 10)
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let categories: Set<String>
     
     var body: some View {
         if viewModel.gameEnded {
-            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore, teamName: viewModel.teamName))
+            ScoreView(viewModel: ScoreView.ViewModel.init(teamScore: viewModel.teamScore))
         } else {
             ZStack {
                 Color(red: 108/255, green: 136/255, blue: 159/255)
                     .ignoresSafeArea()
                 
                 Button {
-                    viewModel.gameStarted = true
                     viewModel.loadGame()
                     viewModel.startTimer()
+                    viewModel.gameStarted = true
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                        Text("Ready!")
-                            .font(.title)
-                            .foregroundColor(.white)
+                        VStack{
+                            Text("Ready!")
+                                .font(.title)
+                                .foregroundColor(.white)
+                            Text("(press to start)")
+                                .font(.body)
+                                .foregroundColor(.white)
+                        }
                     }
                 }
                 .opacity(viewModel.gameStarted ? 0 : 1)
@@ -47,10 +53,9 @@ struct GameView: View {
                 VStack {
                     
                     Spacer()
-                        HStack{
-//                            Text(viewModel.teamName)
-                            
+                    HStack(alignment: .center){
                             Text("Score: \(String(viewModel.teamScore))")
+                            .frame(width: UIScreen.screenWidth * 0.25)
                             
                             Spacer()
                             
@@ -73,12 +78,13 @@ struct GameView: View {
                             Spacer()
                             
                             ZStack{
-                                Circle().fill(viewModel.currentTime > 10 ? .green : .red).frame(width: 40)
-                                Circle().stroke(lineWidth: 2).frame(width: 40)
+                                Circle().fill(viewModel.currentTime > 10 ? .green : .red).frame(width: 41, height: 41)
+                                ProgressBar(timeLimit: $viewModel.timeLimit, currentTime: $viewModel.currentTime)
                                 Text(String(viewModel.currentTime))
                             }.frame(width: 50, height: 50)
+                            .frame(width: UIScreen.screenWidth * 0.25)
                             
-                        }.frame(width: UIScreen.screenWidth * 0.85)
+                        }
                         .opacity(viewModel.gameStarted ? 1 : 0)
                         .padding(.horizontal)
                     
@@ -185,6 +191,11 @@ struct GameView: View {
             .onAppear {
                 viewModel.loadData(categories: categories)
                 viewModel.prepareHaptics()
+            }
+            .onReceive(timer) { fired in
+                if viewModel.gameStarted {
+                    viewModel.updateTimer()
+                }
             }
         }
     }

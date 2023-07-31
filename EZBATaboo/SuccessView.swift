@@ -10,16 +10,15 @@ import SwiftUI
 struct SuccessView: View {
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 5).foregroundColor(.white)
+            RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3).foregroundColor(.white)
             RoundedRectangle(cornerRadius: 10).foregroundColor(.black)
             VStack{
                 Text("Card Added!")
                     .foregroundColor(.white)
                     .padding(.top, 25)
                 Image(systemName: "checkmark.circle.fill")
-                    .resizable()
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .scaledToFit()
                     .padding(10)
                     .padding(.bottom)
             }

@@ -9,14 +9,18 @@ import Foundation
 import SwiftUI
 import CoreHaptics
 import AudioToolbox
+import GoogleMobileAds
+import Combine
 
 extension GameView {
-    @MainActor class ViewModel: ObservableObject {
+    final class ViewModel: ObservableObject {
         @Published var datas = ReadData()
         @Published var engine: CHHapticEngine?
         @Published var gameStarted = false
         @Published var gameEnded = false
         @Published var gamePaused = false
+        @Published var fullScreenAd: Interstitial?
+        @Published var soundPlayer = SoundPlayer()
         
         @Published var timeLimit : Int = 10
         @Published var currentTime : Int = 10
@@ -27,18 +31,17 @@ extension GameView {
         @Published var passedTaboo = [TabooWord]()
         
         @Published var teamScore = 0
-        @Published var teamName : String
         @Published var passCount = 0
         
         @Published var offset : CGFloat = 0
-        @Published var questionLimit : Int = 10
+        @Published var questionLimit : Int = 35
         @Published var answeredQuestions = 0
         
-        init(teamName: String, timeLimit: Int, questionLimit: Int) {
-            self.teamName = teamName
+        init(timeLimit: Int, questionLimit: Int) {
             self.timeLimit = timeLimit
             self.currentTime = timeLimit
             self.questionLimit = questionLimit
+            fullScreenAd = Interstitial()
         }
         
         func passCard() {
@@ -57,11 +60,12 @@ extension GameView {
                 answeredQuestions += 1
                 hapticFeedback(time: 1)
                 if answeredQuestions == questionLimit {
-                     gameEnded = true
-                 }
+                    callAd()
+                    gameEnded = true
+                }
             }
         }
-            
+        
         func prepareHaptics() {
             guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
             
@@ -97,16 +101,17 @@ extension GameView {
                 answeredQuestions += 1
                 AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {   }
                 if answeredQuestions == questionLimit {
-                     gameEnded = true
-                 }
+                    gameEnded = true
+                }
             }
+        }
+        func callAd() {
+            self.fullScreenAd?.showAd()
         }
         
         func startTimer() {
             currentTime = timeLimit
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: !gameEnded) { _ in
-                    self.updateTimer()
-                }
+            soundPlayer.playSound(soundName: "startsound")
         }
         
         func updateTimer() {
@@ -114,12 +119,14 @@ extension GameView {
                 if currentTime > 0 {
                     if currentTime < 11 {
                         hapticFeedback(time: Float(currentTime))
+                        soundPlayer.playSound(soundName: "countdownsound")
                     }
                     currentTime -= 1
-                    print(currentTime)
                 } else {
                     wrongAnswer()
+                    soundPlayer.playSound(soundName: "timeoutsound")
                     gameEnded = true
+                    callAd()
                 }
             }
         }
@@ -141,9 +148,9 @@ extension GameView {
         }
         
         func loadGame() {
-            for _ in 0...(questionLimit + 2) {
-                let randomWord = datas.words.randomElement()
-                gameTaboo.append(randomWord!)
+            let shuffledWords = datas.words.shuffled()
+            for i in 0...(questionLimit + 2) {
+                gameTaboo.append(shuffledWords[i])
             }
         }
         
@@ -152,7 +159,6 @@ extension GameView {
             for category in categories {
                 if category == "custom" {
                     datas.loadCustom()
-                    print("custom dahil")
                 } else {
                     datas.loadData(category)
                 }
@@ -161,7 +167,7 @@ extension GameView {
         
         func checkAppState() -> Bool {
             let appState = UIApplication.shared.applicationState
-
+            
             switch appState {
             case .active:
                 return true
